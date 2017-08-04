@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light"
     android:orientation="vertical">
 
     <include layout="@layout/layout_top" />
@@ -13,5 +10,25 @@
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AAAAA" />
+        android:onClick="btnClick"
+        android:text="AAAAA"
+        android:textColor="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/toolbarBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="ToolbarActivity" />
+
+    <TextView
+        android:id="@+id/txt_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="aaa"
+        android:onClick="btnClick"
+        android:gravity="bottom"
+        android:background="@android:color/holo_red_light"/>
+
 </LinearLayout>

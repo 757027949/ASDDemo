@@ -1,4 +1,4 @@
-package com.asd.asdutils.statusbar;
+package com.asd.asdutils.widget.statusbar;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -52,6 +52,11 @@ public class StatusBarUtil {
         compat(activity, INVALID_VAL);
     }
 
+    /**
+     * 隐藏状态栏
+     * @param activity
+     * @param isHide
+     */
     public static void hideStatusBar(Activity activity, boolean isHide) {
         //得到当前界面的装饰视图
         View decorView = activity.getWindow().getDecorView();

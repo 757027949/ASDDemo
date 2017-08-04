@@ -1,11 +1,17 @@
 package com.asd.asddemo;
 
-import android.support.v7.app.ActionBar;
+import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
-import com.asd.asdutils.statusbar.StatusBarUtil;
+import com.asd.asddemo.bean.User;
+import com.asd.asdutils.widget.statusbar.StatusBarUtil;
+import com.jaydenxiao.common.commonutils.ACache;
+import com.jaydenxiao.common.commonutils.JsonUtils;
+import com.orhanobut.logger.Logger;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -15,30 +21,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        StatusBarUtil.hideStatusBar(this,true);
+        Logger.e(ACache.get(this).getAsString("a") + "-------------");
+        Logger.e(ACache.get(this).getAsString("b") + "-------------");
+        Logger.e(ACache.get(getApplication()).getAsString("b") + "-------------");
+
+        ACache.get(this).put("a", "thisa", 10);
+        ACache.get(getApplication()).put("b", "getApplicationa");
+
+        User user = new User(1, "zhangsan");
+        String str=JsonUtils.toJson(user);
+        Logger.e(str);
+
+        User user1= JsonUtils.fromJson(str,User.class);
+        Logger.e(JsonUtils.toJson(user1));
+
+
+//        StatusBarUtil.fullScreen(this,true);
 //        StatusBarUtil.fullScreen(this,false);
 
-      /*  //得到当前界面的装饰视图
-        if (Build.VERSION.SDK_INT >= 21) {
-            View decorView = getWindow().getDecorView();
-            //让应用主题内容占用系统状态栏的空间,注意:下面两个参数必须一起使用 stable 牢固的
-            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            //设置让应用主题内容占据状态栏和导航栏
-//            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            decorView.setSystemUiVisibility(option);
-            //设置状态栏和导航栏颜色为透明
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-            getWindow().setNavigationBarColor(Color.TRANSPARENT);
-        }*/
-
-        //得到当前界面的装饰视图
-//        View decorView = getWindow().getDecorView();
-// //     SYSTEM_UI_FLAG_FULLSCREEN表示全屏的意思，也就是会将状态栏隐藏
-//        //设置系统UI元素的可见性
-//        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-//        //隐藏标题栏
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
 
 //        TranslateAnimation translateAnimation = new TranslateAnimation(0, 0, 0, 100);
 //        translateAnimation.setDuration(3000);
@@ -60,5 +60,23 @@ public class MainActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 //        StatusBarUtil.onWindowFocusChanged(this,hasFocus);
+    }
+
+    public void btnClick(View view) {
+        switch (view.getId()) {
+            case R.id.txt:
+                Snackbar.make(view, "aaaaa", Snackbar.LENGTH_LONG).setAction("cancle", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "cancle", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, TestAct.class));
+                    }
+                }).show();
+                break;
+            case R.id.toolbarBtn:
+                Intent intent = new Intent(this, ToolbarActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
