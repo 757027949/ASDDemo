@@ -1,14 +1,15 @@
 package com.asd.asddemo;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.asd.asdcommon.commonwidget.statusbar.SystemUiVisibilityUtil;
 import com.asd.asddemo.bean.User;
-import com.asd.asdutils.widget.statusbar.StatusBarUtil;
 import com.jaydenxiao.common.commonutils.ACache;
 import com.jaydenxiao.common.commonutils.JsonUtils;
 import com.orhanobut.logger.Logger;
@@ -29,15 +30,16 @@ public class MainActivity extends AppCompatActivity {
         ACache.get(getApplication()).put("b", "getApplicationa");
 
         User user = new User(1, "zhangsan");
-        String str=JsonUtils.toJson(user);
+        String str = JsonUtils.toJson(user);
         Logger.e(str);
 
-        User user1= JsonUtils.fromJson(str,User.class);
+        User user1 = JsonUtils.fromJson(str, User.class);
         Logger.e(JsonUtils.toJson(user1));
 
 
 //        StatusBarUtil.fullScreen(this,true);
 //        StatusBarUtil.fullScreen(this,false);
+//        StatusBarUtil.hideStatusBar(this,false);
 
 
 //        TranslateAnimation translateAnimation = new TranslateAnimation(0, 0, 0, 100);
@@ -52,14 +54,15 @@ public class MainActivity extends AppCompatActivity {
 
 //        StatusBarUtil.setColor(this, getResources().getColor(android.support.v7.appcompat.R.color.abc_btn_colored_text_material));
         //设置屏幕为横屏
-//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//        SystemUiVisibilityUtil.exit(this);
+        SystemUiVisibilityUtil.enter(this);
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-//        StatusBarUtil.onWindowFocusChanged(this,hasFocus);
+//        StatusBarUtil.onWindowFocusChanged(this, hasFocus);
     }
 
     public void btnClick(View view) {

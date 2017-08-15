@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 /**
  * 如果这个时候屏幕方向发生变化，就会导致Activity重建，然后之前显示的对话框就不见了。
- * Created by Administrator on 2017/8/5 0005.
+ * Created by asd on 2017/8/5 0005.
  */
 
 public class BaseFragmentDialogWithDialog extends DialogFragment {
