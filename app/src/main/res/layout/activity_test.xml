@@ -55,7 +55,7 @@
         android:layout_weight="1"
         android:clickable="true"
         android:src="@mipmap/ic_launcher"
-        app:fabSize="auto"
+        app:fabSize="normal"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="bottom" />
 

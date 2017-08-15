@@ -46,7 +46,7 @@ public class JsonUtils {
      * @MethodName : fromJson
      * @Description : 用来将JSON串转为对象，但此方法不可用来转带泛型的集合
      */
-    public static <T> Object fromJson(String json, Class<T> classOfT) {
+    public static <T> T fromJson(String json, Class<T> classOfT) {
         try {
             return gson.fromJson(json, (Type) classOfT);
         } catch (JsonSyntaxException e) {

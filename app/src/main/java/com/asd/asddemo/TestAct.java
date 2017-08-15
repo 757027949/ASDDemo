@@ -6,10 +6,10 @@ import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Toast;
 
+import com.asd.asdcommon.base.BaseActivity;
+import com.asd.asdcommon.commonutils.ACache;
 import com.asd.asddemo.widget.BaseFragmentDialogWithDialog;
 import com.asd.asddemo.widget.BaseFragmentDialogWithLayout;
-import com.jaydenxiao.common.base.BaseActivity;
-import com.jaydenxiao.common.commonutils.ACache;
 import com.orhanobut.logger.Logger;
 
 /**

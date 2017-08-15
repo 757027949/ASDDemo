@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.asd.asdcommon.commonutils.ACache;
+import com.asd.asdcommon.commonutils.JsonUtils;
 import com.asd.asdcommon.commonwidget.statusbar.SystemUiVisibilityUtil;
 import com.asd.asddemo.bean.User;
-import com.jaydenxiao.common.commonutils.ACache;
-import com.jaydenxiao.common.commonutils.JsonUtils;
 import com.orhanobut.logger.Logger;
 
 
