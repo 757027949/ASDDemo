@@ -35,6 +35,7 @@ public class TestAct extends BaseActivity implements BaseFragmentDialogWithLayou
 
         BaseFragmentDialogWithLayout.getInstance(R.layout.dialog_layout).show(getSupportFragmentManager(),"dialog");
         BaseFragmentDialogWithDialog.getInstance().show(getSupportFragmentManager(), "dialog");
+
     }
 
     @Override

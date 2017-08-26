@@ -1,1 +1,1 @@
-include ':app', ':asdcommon'
+include ':app', ':library:asdcommon', ':FlycoTabLayout_Lib_asd'
