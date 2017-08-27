@@ -1,5 +1,6 @@
 package com.asd.asdcommon.security;
 
+import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
