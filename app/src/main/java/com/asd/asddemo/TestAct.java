@@ -33,7 +33,9 @@ public class TestAct extends BaseActivity implements BaseFragmentDialogWithLayou
         Logger.e(ACache.get(this).getAsString("b") + "-------------");
         Logger.e(ACache.get(getApplication()).getAsString("b") + "-------------");
 
-        BaseFragmentDialogWithLayout.getInstance(R.layout.dialog_layout).show(getSupportFragmentManager(),"dialog");
+//        BaseFragmentDialogWithLayout dialog= BaseFragmentDialogWithLayout.getInstance(R.layout.dialog_layout);
+//        dialog.setCancelable(true);
+//        dialog.show(getSupportFragmentManager(),"dialog");
         BaseFragmentDialogWithDialog.getInstance().show(getSupportFragmentManager(), "dialog");
 
     }

@@ -8,9 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/FlycoTabLayout_Lib_asd" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/library/FlycoTabLayout_Lib_asd" />
             <option value="$PROJECT_DIR$/library/asdcommon" />
           </set>
         </option>
